@@ -1,0 +1,33 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package modelo;
+
+/**
+ *
+ * @author Personal
+ */
+public class Arreglo1 {
+    public static void main(String[] args) {
+        long[] arregloOriginal = new long[10];
+        for (int i = 0; i < 10; i++) {
+         arregloOriginal[0]=55555;
+         arregloOriginal[1]=77777;
+         arregloOriginal[2]=4444;
+         arregloOriginal[3]=66666;
+         arregloOriginal[4]=8888;
+         arregloOriginal[5]=99999;
+         arregloOriginal[6]=889888;
+         arregloOriginal[7]=232222;
+         arregloOriginal[8]=556666;
+         arregloOriginal[9]=88555;
+        }
+        long[] arregloCopia = new long[10];
+        for (int i = 0; i < 10; i++) {
+            arregloCopia[i] = arregloOriginal[i];
+        }
+        System.out.println("Elementos del segundo arreglo:");
+        for (long valor : arregloCopia) {
+            System.out.println(valor);
+        }}}
