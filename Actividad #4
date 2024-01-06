@@ -1,0 +1,43 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package modelo;
+import java.util.Arrays;
+import java.util.Scanner;
+/**
+ *
+ * @author Personal
+ */
+public class Arreglo3{
+    public static void main(String[] args) {
+        int[] arreglo = new int[10];
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese 10 valores para el arreglo:");
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.print("Elemento " + (i + 1) + ": ");
+            arreglo[i] = scanner.nextInt();
+        }
+        System.out.println("Arreglo original: " + Arrays.toString(arreglo));
+        int[] nuevoArreglo = eliminarElementos(arreglo, new int[]{2, 4, 8});
+        System.out.println("Arreglo después de la eliminación: " + Arrays.toString(nuevoArreglo));
+    }
+    public static int[] eliminarElementos(int[] arreglo, int[] posiciones) {
+        int nuevoTamanio = arreglo.length - posiciones.length;
+        int[] nuevoArreglo = new int[nuevoTamanio];
+
+        int indiceNuevoArreglo = 0;
+        for (int i = 0; i < arreglo.length; i++) {
+            if (!contiene(posiciones, i)) {
+                nuevoArreglo[indiceNuevoArreglo] = arreglo[i];
+                indiceNuevoArreglo++;
+            } }
+        return nuevoArreglo;
+   }
+    public static boolean contiene(int[] arreglo, int valor) {
+        for (int elemento : arreglo) {
+            if (elemento == valor) {
+                return true;
+            }}
+        return false;
+    }}
