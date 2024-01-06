@@ -1,0 +1,28 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package modelo;
+import java.util.Scanner;
+/**
+ *
+ * @author Personal
+ */
+public class Arreglo2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el tamaño del arreglo (entre 10 y 20): ");
+        int tamanoarreglo = scanner.nextInt();
+        if (tamanoarreglo < 10 || tamanoarreglo > 20) {
+            System.out.println("Tamaño no válido. Debe estar entre 10 y 20.");
+            return;
+        }
+        char[] arreglochar = new char[tamanoarreglo];
+        for (int i = 0; i < tamanoarreglo; i++) {
+            System.out.print("Ingrese el valor para el elemento " + (i + 1) + ": ");
+            arreglochar[i] = scanner.next().charAt(0);
+        }
+        System.out.println("Valores del arreglo en orden inverso:");
+        for (int i = arreglochar.length -  1; i >= 0; i--) {
+            System.out.println(arreglochar[i]);
+    }}}
