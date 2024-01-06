@@ -1,0 +1,58 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package modelo;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Personal
+ */
+public class Matriz {
+    public static void main(String[] args) {
+        int[][] matriz = new int[4][4];
+        Scanner teclado = new Scanner(System.in);
+        for (int i = 0; i <matriz.length; i++) {
+        for (int j = 0; j <matriz.length ; j++) {
+                System.out.print("Ingrese el valor para la fila " + (i + 1) +
+                                 " y columna " + (j + 1) + ": ");
+                matriz[i][j] = teclado.nextInt();
+        }}
+        for (int i = 0; i <matriz.length; i++) {
+        for (int j = 0; j <matriz.length ; j++) {
+            System.out.print(matriz[i][j]+" ");
+        }
+            System.out.println();
+        }
+        System.out.println("Elementos de la diagonal secundaria:");
+for (int i = 0; i < matriz.length; i++) {
+    for (int j = 0; j < matriz[i].length; j++) {
+        if (i + j == matriz.length - 1) {
+            System.out.print(matriz[i][j] + " ");
+        }
+    }
+}
+
+ System.out.println(
+         " Elementos en el cuarto cuadrante:");
+        for (int i = matriz.length / 2; i < matriz.length; i++) {
+            for (int j = matriz[i].length / 2; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+        }
+System.out.println();
+        int mayor = matriz[0][0];
+        int menor = matriz[0][0];
+                int suma = 0;
+        for (int[] fila : matriz)
+            for (int valor : fila) {
+                mayor = Math.max(mayor, valor);
+                menor = Math.min(menor, valor);
+                suma += valor;
+            }
+        System.out.println("Valor mayor: " + mayor);
+        System.out.println("Valor menor: " + menor);
+        System.out.println("Valor promedio: " + (double) suma / (4 * 4));
+    }}
