@@ -1,0 +1,36 @@
+package modelo;
+
+import java.util.Scanner;
+
+public class Matriz {
+    public static void main(String[] args) {
+        int[][] matriz = new int[4][4];
+        Scanner teclado = new Scanner(System.in);
+
+        // Populate the matrix
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print("Ingrese el valor para la fila " + (i + 1) +
+                                 " y columna " + (j + 1) + ": ");
+                matriz[i][j] = teclado.nextInt();
+            }
+        }
+
+        // Display the maximum, minimum, and average values
+        int mayor = matriz[0][0];
+        int menor = matriz[0][0];
+        int suma = 0;
+
+        for (int[] fila : matriz) {
+            for (int valor : fila) {
+                mayor = Math.max(mayor, valor);
+                menor = Math.min(menor, valor);
+                suma += valor;
+            }
+        }
+
+        System.out.println("Valor mayor: " + mayor);
+        System.out.println("Valor menor: " + menor);
+        System.out.println("Valor promedio: " + (double) suma / (4 * 4));
+    }
+}
